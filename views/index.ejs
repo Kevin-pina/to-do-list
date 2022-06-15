@@ -1,0 +1,36 @@
+<html>
+<head> 
+<title> Cosas por hacer </title>
+ <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+ <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<h2> Una Lista De Cosas Por Hacer </h2>
+
+<form action ="/addtask" method="POST">
+
+<input type="text" name="newtask" placeholder="Añadir nueva tarea">
+<button> Añadir tarea </button>
+
+
+<h2> Tarea añadida </h2>
+
+<% for( var i = 0; i < task.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+<% } %>
+
+<button formaction="/removetask" type="submit" id="top"> Remover </button>
+</form>
+
+<h2> Tareas Completadas </h2>
+
+ <% for(var i = 0; i < complete.length; i++){ %>
+    <li><input type="checkbox" checked><%= complete[i] %> </li>
+<% } %>
+
+</div>
+
+</body>
+</html>
